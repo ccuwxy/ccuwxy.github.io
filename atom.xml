@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="https://blog.ccuwxy.cn/atom.xml" rel="self"/>
+  
+  <link href="https://blog.ccuwxy.cn/"/>
+  <updated>2021-01-12T02:45:01.000Z</updated>
+  <id>https://blog.ccuwxy.cn/</id>
+  
+  <author>
+    <name>wxy</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多线程（二）</title>
+    <link href="https://blog.ccuwxy.cn/2020/04/09/thread02/"/>
+    <id>https://blog.ccuwxy.cn/2020/04/09/thread02/</id>
+    <published>2020-04-09T13:05:00.000Z</published>
+    <updated>2021-01-12T02:45:01.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;ThreadLocal&quot;&gt;&lt;a href=&quot;#ThreadLocal&quot; class=&quot;headerlink&quot; title=&quot;ThreadLocal&quot;&gt;&lt;/a&gt;ThreadLocal&lt;/h3&gt;&lt;p&gt;可以理解&lt;code&gt;ThreadLocal&lt;/code&gt;是对&lt;cod</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="https://blog.ccuwxy.cn/categories/Java/"/>
+    
+    
+    <category term="Thread" scheme="https://blog.ccuwxy.cn/tags/Thread/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络（一）</title>
+    <link href="https://blog.ccuwxy.cn/2020/04/06/net/"/>
+    <id>https://blog.ccuwxy.cn/2020/04/06/net/</id>
+    <published>2020-04-06T13:10:00.000Z</published>
+    <updated>2021-01-11T16:04:00.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;三次握手&quot;&gt;&lt;a href=&quot;#三次握手&quot; class=&quot;headerlink&quot; title=&quot;三次握手&quot;&gt;&lt;/a&gt;三次握手&lt;/h3&gt;&lt;p&gt;\1. 第一次握手: client将标志位SYN置为1,随机产生一个值seq = J,并将该数据发送给server,clie</summary>
+      
+    
+    
+    
+    <category term="计算机基础" scheme="https://blog.ccuwxy.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="计算机网络" scheme="https://blog.ccuwxy.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JVM</title>
+    <link href="https://blog.ccuwxy.cn/2020/04/06/JVM/"/>
+    <id>https://blog.ccuwxy.cn/2020/04/06/JVM/</id>
+    <published>2020-04-06T13:05:00.000Z</published>
+    <updated>2021-01-12T02:43:18.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Java内存区域&quot;&gt;&lt;a href=&quot;#Java内存区域&quot; class=&quot;headerlink&quot; title=&quot;Java内存区域&quot;&gt;&lt;/a&gt;Java内存区域&lt;/h3&gt;&lt;p&gt;  &lt;strong&gt;JDK1.8之前：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;str</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="https://blog.ccuwxy.cn/categories/Java/"/>
+    
+    
+    <category term="JVM" scheme="https://blog.ccuwxy.cn/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis</title>
+    <link href="https://blog.ccuwxy.cn/2020/04/06/redis/"/>
+    <id>https://blog.ccuwxy.cn/2020/04/06/redis/</id>
+    <published>2020-04-06T11:36:00.000Z</published>
+    <updated>2021-01-12T02:44:43.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;常用数据类型&quot;&gt;&lt;a href=&quot;#常用数据类型&quot; class=&quot;headerlink&quot; title=&quot;常用数据类型&quot;&gt;&lt;/a&gt;常用数据类型&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;String&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt; &lt;strong&gt;常用命令:&lt;/strong&gt;  se</summary>
+      
+    
+    
+    
+    <category term="Database" scheme="https://blog.ccuwxy.cn/categories/Database/"/>
+    
+    
+    <category term="redis" scheme="https://blog.ccuwxy.cn/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL和Oracle的区别</title>
+    <link href="https://blog.ccuwxy.cn/2020/04/06/mysql-oracle/"/>
+    <id>https://blog.ccuwxy.cn/2020/04/06/mysql-oracle/</id>
+    <published>2020-04-06T11:30:00.000Z</published>
+    <updated>2021-01-12T02:44:27.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;事务的提交&quot;&gt;&lt;a href=&quot;#事务的提交&quot; class=&quot;headerlink&quot; title=&quot;事务的提交&quot;&gt;&lt;/a&gt;事务的提交&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;mysql默认自动提交事务&lt;/li&gt;
+&lt;li&gt;oracle默认手动提交事务，通过&lt;code&gt;commit</summary>
+      
+    
+    
+    
+    <category term="Database" scheme="https://blog.ccuwxy.cn/categories/Database/"/>
+    
+    
+    <category term="MySQL" scheme="https://blog.ccuwxy.cn/tags/MySQL/"/>
+    
+    <category term="Oracle" scheme="https://blog.ccuwxy.cn/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL联合索引(复合索引)的使用原则</title>
+    <link href="https://blog.ccuwxy.cn/2020/04/06/mysql/"/>
+    <id>https://blog.ccuwxy.cn/2020/04/06/mysql/</id>
+    <published>2020-04-06T11:30:00.000Z</published>
+    <updated>2021-01-12T02:43:54.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;MySQL联合-索引-复合索引-的使用原则&quot;&gt;&lt;a href=&quot;#MySQL联合-索引-复合索引-的使用原则&quot; class=&quot;headerlink&quot; title=&quot;ＭySQL联合 索引(复合索引)的使用原则&quot;&gt;&lt;/a&gt;ＭySQL联合 索引(复合索引)的使用原则&lt;/</summary>
+      
+    
+    
+    
+    <category term="Database" scheme="https://blog.ccuwxy.cn/categories/Database/"/>
+    
+    
+    <category term="联合索引" scheme="https://blog.ccuwxy.cn/tags/%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/"/>
+    
+    <category term="MySQL" scheme="https://blog.ccuwxy.cn/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多线程（一）</title>
+    <link href="https://blog.ccuwxy.cn/2020/04/04/thread01/"/>
+    <id>https://blog.ccuwxy.cn/2020/04/04/thread01/</id>
+    <published>2020-04-04T14:05:00.000Z</published>
+    <updated>2021-01-12T02:44:55.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;进程？&quot;&gt;&lt;a href=&quot;#进程？&quot; class=&quot;headerlink&quot; title=&quot;进程？&quot;&gt;&lt;/a&gt;进程？&lt;/h3&gt;&lt;p&gt;进程是程序的一次执行过程，是程序运行程序的基本单位，进程是动态的，程序的运行就是进程从创建到运行再到消亡的一个过程。&lt;/p&gt;
+&lt;h3</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="https://blog.ccuwxy.cn/categories/Java/"/>
+    
+    
+    <category term="Thread" scheme="https://blog.ccuwxy.cn/tags/Thread/"/>
+    
+  </entry>
+  
+</feed>
