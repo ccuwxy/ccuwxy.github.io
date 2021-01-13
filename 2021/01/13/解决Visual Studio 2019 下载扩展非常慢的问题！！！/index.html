@@ -19,19 +19,19 @@
   
   
   <title>解决Visual Studio 2019 下载扩展非常慢的问题！！！ | wxy的博客</title>
-  <meta name="description" content="解决思路（推荐使用下载工具下载到本地再安装）一、修改host文件（该方法效果因地理位置而不同）（不推荐）  host文件位置：C:\Windows\System32\drivers\etc 通过站长工具http:&#x2F;&#x2F;tool.chinaz.com&#x2F;dns 查询 download.visualstudio.microsoft.com 域名TTL值最小的IP地址 在最后一行加上 这个IP地址和域名11">
+  <meta name="description" content="解决思路（推荐使用下载工具下载到本地再安装）一、修改host文件（该方法效果因地理位置而不同）（不推荐）  host文件位置：C:\Windows\System32\drivers\etc 通过站长工具http:&#x2F;&#x2F;tool.chinaz.com&#x2F;dns 查询 download.visualstudio.microsoft.com 域名TTL值最小的IP地址 在最后一行加上 这个IP地址和域名12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决Visual Studio 2019 下载扩展非常慢的问题！！！">
 <meta property="og:url" content="https://blog.ccuwxy.cn/2021/01/13/%E8%A7%A3%E5%86%B3Visual%20Studio%202019%20%E4%B8%8B%E8%BD%BD%E6%89%A9%E5%B1%95%E9%9D%9E%E5%B8%B8%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%81%EF%BC%81%EF%BC%81/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="解决思路（推荐使用下载工具下载到本地再安装）一、修改host文件（该方法效果因地理位置而不同）（不推荐）  host文件位置：C:\Windows\System32\drivers\etc 通过站长工具http:&#x2F;&#x2F;tool.chinaz.com&#x2F;dns 查询 download.visualstudio.microsoft.com 域名TTL值最小的IP地址 在最后一行加上 这个IP地址和域名11">
+<meta property="og:description" content="解决思路（推荐使用下载工具下载到本地再安装）一、修改host文件（该方法效果因地理位置而不同）（不推荐）  host文件位置：C:\Windows\System32\drivers\etc 通过站长工具http:&#x2F;&#x2F;tool.chinaz.com&#x2F;dns 查询 download.visualstudio.microsoft.com 域名TTL值最小的IP地址 在最后一行加上 这个IP地址和域名12">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://image.ccuwxy.cn/blog/vs01.jpg">
 <meta property="og:image" content="https://image.ccuwxy.cn/blog/vs02.jpg">
 <meta property="og:image" content="https://image.ccuwxy.cn/blog/vs03.jpg">
 <meta property="og:image" content="https://image.ccuwxy.cn/blog/vs04.jpg">
 <meta property="article:published_time" content="2021-01-13T02:30:00.000Z">
-<meta property="article:modified_time" content="2021-01-13T04:21:26.000Z">
+<meta property="article:modified_time" content="2021-01-13T04:49:43.000Z">
 <meta property="article:author" content="wxy">
 <meta property="article:tag" content="软件技巧，vs">
 <meta name="twitter:card" content="summary">
@@ -391,9 +391,9 @@
       
         <h3 id="解决思路（推荐使用下载工具下载到本地再安装）"><a href="#解决思路（推荐使用下载工具下载到本地再安装）" class="headerlink" title="解决思路（推荐使用下载工具下载到本地再安装）"></a>解决思路（推荐使用下载工具下载到本地再安装）</h3><p>一、修改host文件（该方法效果因地理位置而不同）（不推荐）</p>
 <ol>
-<li>host文件位置：C:\Windows\System32\drivers\etc</li>
-<li>通过站长工具<a target="_blank" rel="noopener" href="http://tool.chinaz.com/dns">http://tool.chinaz.com/dns</a> 查询 download.visualstudio.microsoft.com 域名TTL值最小的IP地址<img src="https://image.ccuwxy.cn/blog/vs01.jpg"></li>
-<li>在最后一行加上 这个IP地址和域名<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">122.188</span><span class="number">.0</span><span class="number">.118</span> download.visualstudio.microsoft.com</span><br></pre></td></tr></table></figure></li>
+<li>host文件位置：<code>C:\Windows\System32\drivers\etc</code></li>
+<li>通过站长工具<a target="_blank" rel="noopener" href="http://tool.chinaz.com/dns">http://tool.chinaz.com/dns</a> 查询 <code>download.visualstudio.microsoft.com</code> 域名TTL值最小的IP地址<img src="https://image.ccuwxy.cn/blog/vs01.jpg"></li>
+<li>在最后一行加上 这个IP地址和域名<br><code>122.188.0.118 download.visualstudio.microsoft.com</code></li>
 <li>打开cmd命令行窗口 使用 ipconfig /flushdns 命令刷新DNS</li>
 <li>重新下载扩展就可以了</li>
 </ol>
@@ -417,7 +417,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://blog.ccuwxy.cn/2021/01/13/%E8%A7%A3%E5%86%B3Visual%20Studio%202019%20%E4%B8%8B%E8%BD%BD%E6%89%A9%E5%B1%95%E9%9D%9E%E5%B8%B8%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%81%EF%BC%81%EF%BC%81/" title="解决Visual Studio 2019 下载扩展非常慢的问题！！！" target="_blank" rel="external">https://blog.ccuwxy.cn/2021/01/13/%E8%A7%A3%E5%86%B3Visual%20Studio%202019%20%E4%B8%8B%E8%BD%BD%E6%89%A9%E5%B1%95%E9%9D%9E%E5%B8%B8%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%81%EF%BC%81%EF%BC%81/</a>
+      <a style="word-wrap:break-word;" href="https://blog.ccuwxy.cn/2021/01/13/%E8%A7%A3%E5%86%B3Visual%20Studio%202019%20%E4%B8%8B%E8%BD%BD%E6%89%A9%E5%B1%95%E9%9D%9E%E5%B8%B8%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%81%EF%BC%81%EF%BC%81/" title="解决Visual Studio 2019 下载扩展非常慢的问题！！！" target="_blank" rel="external">https://blog.ccuwxy.cn/2021/01/13/%E8%A7%A3%E5%86%B3Visual%20Studio%202019%20%E4%B8%8B%E8%BD%BD%E6%89%A9%E5%B1%95%E9%9D%9E%E5%B8%B8%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%81%EF%BC%81%EF%BC%81/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -425,6 +425,7 @@
     </li>
   </ul>
 </blockquote>
+<!--
 
 
 <div class="panel panel-default panel-badger">
@@ -443,7 +444,7 @@
   </div>
 </div>
 
-
+-->
     </div>
   </article>
   
