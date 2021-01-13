@@ -19,18 +19,18 @@
   
   
   <title>MySQL联合索引(复合索引)的使用原则 | wxy的博客</title>
-  <meta name="description" content="ＭySQL联合 索引(复合索引)的使用原则命名规则：表名_字段名  需要加索引的字段，要在where条件中。 数据量少的字段不需要加索引。最窄的字段放在键的左边。 如果where条件中是OR关系，必须所有的or条件都必须是独立索引，否则加索引不起作用。见：mysql关于or的索引问题 最左匹配原则。 只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有一列含有NULL值，那么这一列对于">
+  <meta name="description" content="ＭySQL联合 索引(复合索引)的使用原则命名规则：表名_字段名  需要加索引的字段，要在where条件中。 数据量少的字段不需要加索引。最窄的字段放在键的左边。 如果where条件中是OR关系，必须所有的or条件都必须是独立索引，否则加索引不起作用。 最左匹配原则。 只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有一列含有NULL值，那么这一列对于此复合索引就是无效的。所以我们在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL联合索引(复合索引)的使用原则">
 <meta property="og:url" content="https://blog.ccuwxy.cn/2020/04/06/mysql/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="ＭySQL联合 索引(复合索引)的使用原则命名规则：表名_字段名  需要加索引的字段，要在where条件中。 数据量少的字段不需要加索引。最窄的字段放在键的左边。 如果where条件中是OR关系，必须所有的or条件都必须是独立索引，否则加索引不起作用。见：mysql关于or的索引问题 最左匹配原则。 只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有一列含有NULL值，那么这一列对于">
+<meta property="og:description" content="ＭySQL联合 索引(复合索引)的使用原则命名规则：表名_字段名  需要加索引的字段，要在where条件中。 数据量少的字段不需要加索引。最窄的字段放在键的左边。 如果where条件中是OR关系，必须所有的or条件都必须是独立索引，否则加索引不起作用。 最左匹配原则。 只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有一列含有NULL值，那么这一列对于此复合索引就是无效的。所以我们在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-06T11:30:00.000Z">
-<meta property="article:modified_time" content="2021-01-12T02:43:54.000Z">
+<meta property="article:modified_time" content="2021-01-13T04:02:37.000Z">
 <meta property="article:author" content="wxy">
-<meta property="article:tag" content="联合索引">
 <meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="联合索引">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
   <link rel="canonical" href="blog.ccuwxy.cn">
@@ -177,7 +177,9 @@
     	
         <li><a href="https://github.com/ccuwxy" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
-        <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        <li><a href="https://weibo.com/u/3192340432" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="mailto:wxy@ccuwxy.cn" target="_blank" title="Email" data-toggle=tooltip data-placement=top><i class="icon icon-email"></i></a></li>
         
         <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
@@ -207,7 +209,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -217,7 +219,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thread/" rel="tag">Thread</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/" rel="tag">联合索引</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PTA/" rel="tag">PTA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thread/" rel="tag">Thread</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/" rel="tag">联合索引</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -227,7 +229,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/JVM/" style="font-size: 13px;">JVM</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/Oracle/" style="font-size: 13px;">Oracle</a> <a href="/tags/Thread/" style="font-size: 14px;">Thread</a> <a href="/tags/redis/" style="font-size: 13px;">redis</a> <a href="/tags/%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/" style="font-size: 13px;">联合索引</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a>
+      <a href="/tags/JVM/" style="font-size: 13px;">JVM</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/Oracle/" style="font-size: 13px;">Oracle</a> <a href="/tags/PTA/" style="font-size: 13px;">PTA</a> <a href="/tags/Thread/" style="font-size: 14px;">Thread</a> <a href="/tags/redis/" style="font-size: 13px;">redis</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 13px;">算法</a> <a href="/tags/%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/" style="font-size: 13px;">联合索引</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a>
     </div>
   </div>
 
@@ -236,7 +238,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -248,6 +250,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/01/13/PTA%20Basic%20Level%201060%20%E7%88%B1%E4%B8%81%E9%A1%BF%E6%95%B0%20(25%E5%88%86)/" class="title">PTA Basic Level 1060 爱丁顿数 (25分)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-01-13T03:01:00.000Z" itemprop="datePublished">2021-01-13</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -304,21 +321,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2020-04-06T11:36:00.000Z" itemprop="datePublished">2020-04-06</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/Database/">Database</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/04/06/mysql-oracle/" class="title">MySQL和Oracle的区别</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-04-06T11:30:00.000Z" itemprop="datePublished">2020-04-06</time>
               </p>
             </div>
           </li>
@@ -396,7 +398,7 @@
 <ol>
 <li>需要加索引的字段，要在where条件中。</li>
 <li>数据量少的字段不需要加索引。最窄的字段放在键的左边。</li>
-<li>如果where条件中是OR关系，必须所有的or条件都必须是独立索引，否则加索引不起作用。见：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yuerdongni/p/4255395.html">mysql关于or的索引问题</a></li>
+<li>如果where条件中是OR关系，必须所有的or条件都必须是独立索引，否则加索引不起作用。</li>
 <li>最<strong>左匹配</strong>原则。</li>
 <li>只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有<strong>一列</strong>含有<strong>NULL值</strong>，那么这一列对于此复合索引就是<strong>无效</strong>的。所以我们在数据库设计时不要让字段的默认值为NULL。</li>
 </ol>
@@ -549,7 +551,9 @@
     	
         <li><a href="https://github.com/ccuwxy" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
-        <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        <li><a href="https://weibo.com/u/3192340432" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="mailto:wxy@ccuwxy.cn" target="_blank" title="Email" data-toggle=tooltip data-placement=top><i class="icon icon-email"></i></a></li>
         
         <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
