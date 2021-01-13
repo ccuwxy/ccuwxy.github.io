@@ -6,7 +6,7 @@
   <link href="https://blog.ccuwxy.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.ccuwxy.cn/"/>
-  <updated>2021-01-13T03:47:28.000Z</updated>
+  <updated>2021-01-13T04:21:50.000Z</updated>
   <id>https://blog.ccuwxy.cn/</id>
   
   <author>
@@ -21,12 +21,13 @@
     <link href="https://blog.ccuwxy.cn/2021/01/13/PTA%20Basic%20Level%201060%20%E7%88%B1%E4%B8%81%E9%A1%BF%E6%95%B0%20(25%E5%88%86)/"/>
     <id>https://blog.ccuwxy.cn/2021/01/13/PTA%20Basic%20Level%201060%20%E7%88%B1%E4%B8%81%E9%A1%BF%E6%95%B0%20(25%E5%88%86)/</id>
     <published>2021-01-13T03:01:00.000Z</published>
-    <updated>2021-01-13T03:47:28.000Z</updated>
+    <updated>2021-01-13T04:21:50.000Z</updated>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;PTA-Basic-Level-1060-爱丁顿数-25分&quot;&gt;&lt;a href=&quot;#PTA-Basic-Level-1060-爱丁顿数-25分&quot; class=&quot;headerlink&quot; title=&quot;PTA Basic Level 1060 爱丁顿数 (25分)&quot;&gt;&lt;</summary>
+    <summary type="html">&lt;p&gt;英国天文学家爱丁顿很喜欢骑车。据说他为了炫耀自己的骑车功力，还定义了一个“爱丁顿数” E ，即满足有 E 天骑车超过 E 英里的最大整数 E。据说爱丁顿自己的 E 等于87。&lt;/p&gt;
+&lt;p&gt;现给定某人 &lt;em&gt;N&lt;/em&gt; 天的骑车距离，请你算出对应的爱丁顿数 &lt;em&gt;E&lt;</summary>
       
     
     
@@ -45,12 +46,12 @@
     <link href="https://blog.ccuwxy.cn/2021/01/13/%E8%A7%A3%E5%86%B3Visual%20Studio%202019%20%E4%B8%8B%E8%BD%BD%E6%89%A9%E5%B1%95%E9%9D%9E%E5%B8%B8%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%81%EF%BC%81%EF%BC%81/"/>
     <id>https://blog.ccuwxy.cn/2021/01/13/%E8%A7%A3%E5%86%B3Visual%20Studio%202019%20%E4%B8%8B%E8%BD%BD%E6%89%A9%E5%B1%95%E9%9D%9E%E5%B8%B8%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%81%EF%BC%81%EF%BC%81/</id>
     <published>2021-01-13T02:30:00.000Z</published>
-    <updated>2021-01-13T04:19:02.000Z</updated>
+    <updated>2021-01-13T04:21:26.000Z</updated>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;解决Visual-Studio-2019-下载扩展非常慢的问题！！！&quot;&gt;&lt;a href=&quot;#解决Visual-Studio-2019-下载扩展非常慢的问题！！！&quot; class=&quot;headerlink&quot; title=&quot;解决Visual Studio 2019 下载扩</summary>
+    <summary type="html">&lt;h3 id=&quot;解决思路（推荐使用下载工具下载到本地再安装）&quot;&gt;&lt;a href=&quot;#解决思路（推荐使用下载工具下载到本地再安装）&quot; class=&quot;headerlink&quot; title=&quot;解决思路（推荐使用下载工具下载到本地再安装）&quot;&gt;&lt;/a&gt;解决思路（推荐使用下载工具下载到本地再安</summary>
       
     
     
