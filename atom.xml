@@ -6,7 +6,7 @@
   <link href="https://blog.ccuwxy.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.ccuwxy.cn/"/>
-  <updated>2021-01-13T14:10:14.000Z</updated>
+  <updated>2021-01-14T15:42:29.000Z</updated>
   <id>https://blog.ccuwxy.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PAT Basic Level 1004 成绩排名(c++解法)</title>
+    <link href="https://blog.ccuwxy.cn/2021/01/14/PAT-Basic-Level-1004-%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D(c++%E8%A7%A3%E6%B3%95)/"/>
+    <id>https://blog.ccuwxy.cn/2021/01/14/PAT-Basic-Level-1004-%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D(c++%E8%A7%A3%E6%B3%95)/</id>
+    <published>2021-01-14T14:52:05.000Z</published>
+    <updated>2021-01-14T15:42:29.000Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;读入 n（&amp;gt;0）名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。&lt;/p&gt;
+&lt;h3 id=&quot;输入格式：&quot;&gt;&lt;a href=&quot;#输入格式：&quot; class=&quot;headerlink&quot; title=&quot;输入格式：&quot;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;每个测试</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="https://blog.ccuwxy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="https://blog.ccuwxy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="PAT" scheme="https://blog.ccuwxy.cn/tags/PAT/"/>
+    
+  </entry>
   
   <entry>
     <title>PAT Basic Level 1002 写出这个数(20分)</title>
