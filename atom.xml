@@ -6,7 +6,7 @@
   <link href="https://blog.ccuwxy.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.ccuwxy.cn/"/>
-  <updated>2021-01-17T08:00:02.549Z</updated>
+  <updated>2021-01-18T14:26:41.000Z</updated>
   <id>https://blog.ccuwxy.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Visual Studio 2019 创建C++项目并运行</title>
+    <link href="https://blog.ccuwxy.cn/7df02547/"/>
+    <id>https://blog.ccuwxy.cn/7df02547/</id>
+    <published>2021-01-18T14:11:00.000Z</published>
+    <updated>2021-01-18T14:26:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-点击创建新项目"><a href="#1-点击创建新项目" class="headerlink" title="1. 点击创建新项目"></a>1. 点击创建新项目</h3><p><img src="https://image.ccuwxy.cn/blog/vsc01.jpg"></p><h3 id="2-选择创建空项目"><a href="#2-选择创建空项目" class="headerlink" title="2. 选择创建空项目"></a>2. 选择创建空项目</h3><p><img src="https://image.ccuwxy.cn/blog/vsc02.jpg"></p><h3 id="3-输入项目名称、位置与解决方案名称"><a href="#3-输入项目名称、位置与解决方案名称" class="headerlink" title="3. 输入项目名称、位置与解决方案名称"></a>3. 输入项目名称、位置与解决方案名称</h3><h3 id="4-在解决方案资源管理器中的源文件点击右键，添加新建项"><a href="#4-在解决方案资源管理器中的源文件点击右键，添加新建项" class="headerlink" title="4. 在解决方案资源管理器中的源文件点击右键，添加新建项"></a>4. 在解决方案资源管理器中的源文件点击右键，添加新建项</h3><p><img src="https://image.ccuwxy.cn/blog/vsc03.jpg"></p><h3 id="5-选择C-文件，修改文件名称，添加即可"><a href="#5-选择C-文件，修改文件名称，添加即可" class="headerlink" title="5. 选择C++文件，修改文件名称，添加即可"></a>5. 选择C++文件，修改文件名称，添加即可</h3><h3 id="6-输入示例代码后，点击本地Windows调试器，运行即可"><a href="#6-输入示例代码后，点击本地Windows调试器，运行即可" class="headerlink" title="6. 输入示例代码后，点击本地Windows调试器，运行即可"></a>6. 输入示例代码后，点击本地Windows调试器，运行即可</h3><p><img src="https://image.ccuwxy.cn/blog/vsc04.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1-点击创建新项目&quot;&gt;&lt;a href=&quot;#1-点击创建新项目&quot; class=&quot;headerlink&quot; title=&quot;1. 点击创建新项目&quot;&gt;&lt;/a&gt;1. 点击创建新项目&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://image.ccuwxy.cn/blog/v</summary>
+      
+    
+    
+    
+    <category term="Visual Studio" scheme="https://blog.ccuwxy.cn/categories/Visual-Studio/"/>
+    
+    
+    <category term="软件技巧" scheme="https://blog.ccuwxy.cn/tags/%E8%BD%AF%E4%BB%B6%E6%8A%80%E5%B7%A7/"/>
+    
+    <category term="VS" scheme="https://blog.ccuwxy.cn/tags/VS/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode 7. 整数反转</title>
