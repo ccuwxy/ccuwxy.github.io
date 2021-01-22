@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.ccuwxy.cn/c64d45f4/</loc>
+    <lastmod>2021-01-22</lastmod>
+  <changefreq> always </ changefreq >
+</url>
+  <url>
     <loc>https://blog.ccuwxy.cn/7df02547/</loc>
     <lastmod>2021-01-18</lastmod>
   <changefreq> always </ changefreq >
@@ -67,11 +72,6 @@
 </url>
   <url>
     <loc>https://blog.ccuwxy.cn/7b25d017/</loc>
-    <lastmod>2021-01-14</lastmod>
-  <changefreq> always </ changefreq >
-</url>
-  <url>
-    <loc>https://blog.ccuwxy.cn/c64d45f4/</loc>
     <lastmod>2021-01-14</lastmod>
   <changefreq> always </ changefreq >
 </url>

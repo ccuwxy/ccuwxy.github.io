@@ -397,7 +397,7 @@
     <link href="https://blog.ccuwxy.cn/c64d45f4/"/>
     <id>https://blog.ccuwxy.cn/c64d45f4/</id>
     <published>2020-04-06T11:30:00.000Z</published>
-    <updated>2021-01-14T16:53:00.355Z</updated>
+    <updated>2021-01-22T15:31:56.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="MySQL联合-索引-复合索引-的使用原则"><a href="#MySQL联合-索引-复合索引-的使用原则" class="headerlink" title="ＭySQL联合 索引(复合索引)的使用原则"></a>ＭySQL联合 索引(复合索引)的使用原则</h2><p>命名规则：表名_字段名</p><ol><li>需要加索引的字段，要在where条件中。</li><li>数据量少的字段不需要加索引。最窄的字段放在键的左边。</li><li>如果where条件中是OR关系，必须所有的or条件都必须是独立索引，否则加索引不起作用。</li><li>最<strong>左匹配</strong>原则。</li><li>只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有<strong>一列</strong>含有<strong>NULL值</strong>，那么这一列对于此复合索引就是<strong>无效</strong>的。所以我们在数据库设计时不要让字段的默认值为NULL。</li></ol><h2 id="聚簇索引与非聚簇索引（也叫二级索引）"><a href="#聚簇索引与非聚簇索引（也叫二级索引）" class="headerlink" title="聚簇索引与非聚簇索引（也叫二级索引）"></a>聚簇索引与非聚簇索引（也叫二级索引）</h2><ul><li>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据</li><li>非聚簇索引：将数据存储于索引分开结构，索引结构的叶子节点指向了数据的对应行。</li></ul>]]></content>
     
