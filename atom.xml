@@ -6,7 +6,7 @@
   <link href="https://blog.ccuwxy.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.ccuwxy.cn/"/>
-  <updated>2021-01-18T14:27:55.469Z</updated>
+  <updated>2021-01-25T08:57:19.000Z</updated>
   <id>https://blog.ccuwxy.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1006 换个格式输出整数(c++解法)</title>
+    <link href="https://blog.ccuwxy.cn/5279a7e9/"/>
+    <id>https://blog.ccuwxy.cn/5279a7e9/</id>
+    <published>2021-01-25T06:52:05.000Z</published>
+    <updated>2021-01-25T08:57:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>让我们用字母 <code>B</code> 来表示“百”、字母 <code>S</code> 表示“十”，用 <code>12...n</code> 来表示不为零的个位数字 <code>n</code>（&lt;10），换个格式来输出任一个不超过 3 位的正整数。例如 <code>234</code> 应该被输出为 <code>BBSSS1234</code>，因为它有 2 个“百”、3 个“十”、以及个位的 4。</p><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个测试输入包含 1 个测试用例，给出正整数 n（&lt;1000）。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>每个测试用例的输出占一行，用规定的格式输出 n。</p><h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">234</span><br></pre></td></tr></table></figure><h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BBSSS1234</span><br></pre></td></tr></table></figure><h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">23</span><br></pre></td></tr></table></figure><h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SS123</span><br></pre></td></tr></table></figure><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> b = n / <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> s = n % <span class="number">100</span> / <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> g = n % <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (b--)</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">&#x27;B&#x27;</span>;</span><br><span class="line"><span class="keyword">while</span> (s--)</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">&#x27;S&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= g; i++)</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; i;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;让我们用字母 &lt;code&gt;B&lt;/code&gt; 来表示“百”、字母 &lt;code&gt;S&lt;/code&gt; 表示“十”，用 &lt;code&gt;12...n&lt;/code&gt; 来表示不为零的个位数字 &lt;code&gt;n&lt;/code&gt;（&amp;lt;10），换个格式来输出任一个不超过 3 位的正整数。例如 &lt;c</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="https://blog.ccuwxy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="PAT" scheme="https://blog.ccuwxy.cn/tags/PAT/"/>
+    
+    <category term="算法" scheme="https://blog.ccuwxy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Visual Studio 2019 创建C++项目并运行</title>
@@ -365,6 +391,32 @@
   </entry>
   
   <entry>
+    <title>MySQL联合索引(复合索引)的使用原则</title>
+    <link href="https://blog.ccuwxy.cn/c64d45f4/"/>
+    <id>https://blog.ccuwxy.cn/c64d45f4/</id>
+    <published>2020-04-06T11:30:00.000Z</published>
+    <updated>2021-01-22T15:31:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MySQL联合-索引-复合索引-的使用原则"><a href="#MySQL联合-索引-复合索引-的使用原则" class="headerlink" title="ＭySQL联合 索引(复合索引)的使用原则"></a>ＭySQL联合 索引(复合索引)的使用原则</h2><p>命名规则：表名_字段名</p><ol><li>需要加索引的字段，要在where条件中。</li><li>数据量少的字段不需要加索引。最窄的字段放在键的左边。</li><li>如果where条件中是OR关系，必须所有的or条件都必须是独立索引，否则加索引不起作用。</li><li>最<strong>左匹配</strong>原则。</li><li>只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有<strong>一列</strong>含有<strong>NULL值</strong>，那么这一列对于此复合索引就是<strong>无效</strong>的。所以我们在数据库设计时不要让字段的默认值为NULL。</li></ol><h2 id="聚簇索引与非聚簇索引（也叫二级索引）"><a href="#聚簇索引与非聚簇索引（也叫二级索引）" class="headerlink" title="聚簇索引与非聚簇索引（也叫二级索引）"></a>聚簇索引与非聚簇索引（也叫二级索引）</h2><ul><li>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据</li><li>非聚簇索引：将数据存储于索引分开结构，索引结构的叶子节点指向了数据的对应行。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;MySQL联合-索引-复合索引-的使用原则&quot;&gt;&lt;a href=&quot;#MySQL联合-索引-复合索引-的使用原则&quot; class=&quot;headerlink&quot; title=&quot;ＭySQL联合 索引(复合索引)的使用原则&quot;&gt;&lt;/a&gt;ＭySQL联合 索引(复合索引)的使用原则&lt;/</summary>
+      
+    
+    
+    
+    <category term="数据库" scheme="https://blog.ccuwxy.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="MySQL" scheme="https://blog.ccuwxy.cn/tags/MySQL/"/>
+    
+    <category term="联合索引" scheme="https://blog.ccuwxy.cn/tags/%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL和Oracle的区别</title>
     <link href="https://blog.ccuwxy.cn/eae41e22/"/>
     <id>https://blog.ccuwxy.cn/eae41e22/</id>
@@ -389,32 +441,6 @@
     <category term="MySQL" scheme="https://blog.ccuwxy.cn/tags/MySQL/"/>
     
     <category term="Oracle" scheme="https://blog.ccuwxy.cn/tags/Oracle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL联合索引(复合索引)的使用原则</title>
-    <link href="https://blog.ccuwxy.cn/c64d45f4/"/>
-    <id>https://blog.ccuwxy.cn/c64d45f4/</id>
-    <published>2020-04-06T11:30:00.000Z</published>
-    <updated>2021-01-22T15:31:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="MySQL联合-索引-复合索引-的使用原则"><a href="#MySQL联合-索引-复合索引-的使用原则" class="headerlink" title="ＭySQL联合 索引(复合索引)的使用原则"></a>ＭySQL联合 索引(复合索引)的使用原则</h2><p>命名规则：表名_字段名</p><ol><li>需要加索引的字段，要在where条件中。</li><li>数据量少的字段不需要加索引。最窄的字段放在键的左边。</li><li>如果where条件中是OR关系，必须所有的or条件都必须是独立索引，否则加索引不起作用。</li><li>最<strong>左匹配</strong>原则。</li><li>只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有<strong>一列</strong>含有<strong>NULL值</strong>，那么这一列对于此复合索引就是<strong>无效</strong>的。所以我们在数据库设计时不要让字段的默认值为NULL。</li></ol><h2 id="聚簇索引与非聚簇索引（也叫二级索引）"><a href="#聚簇索引与非聚簇索引（也叫二级索引）" class="headerlink" title="聚簇索引与非聚簇索引（也叫二级索引）"></a>聚簇索引与非聚簇索引（也叫二级索引）</h2><ul><li>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据</li><li>非聚簇索引：将数据存储于索引分开结构，索引结构的叶子节点指向了数据的对应行。</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;MySQL联合-索引-复合索引-的使用原则&quot;&gt;&lt;a href=&quot;#MySQL联合-索引-复合索引-的使用原则&quot; class=&quot;headerlink&quot; title=&quot;ＭySQL联合 索引(复合索引)的使用原则&quot;&gt;&lt;/a&gt;ＭySQL联合 索引(复合索引)的使用原则&lt;/</summary>
-      
-    
-    
-    
-    <category term="数据库" scheme="https://blog.ccuwxy.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-    <category term="MySQL" scheme="https://blog.ccuwxy.cn/tags/MySQL/"/>
-    
-    <category term="联合索引" scheme="https://blog.ccuwxy.cn/tags/%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/"/>
     
   </entry>
   
