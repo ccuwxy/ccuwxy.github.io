@@ -6,7 +6,7 @@
   <link href="https://blog.ccuwxy.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.ccuwxy.cn/"/>
-  <updated>2021-09-01T09:16:25.233Z</updated>
+  <updated>2021-09-06T06:26:01.000Z</updated>
   <id>https://blog.ccuwxy.cn/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PAT Basic Level 1015 德才论（C++实现）</title>
+    <link href="https://blog.ccuwxy.cn/59bbe03f/"/>
+    <id>https://blog.ccuwxy.cn/59bbe03f/</id>
+    <published>2021-09-06T06:32:05.000Z</published>
+    <updated>2021-09-06T06:26:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”</p><p>现给出一批考生的德才分数，请根据司马光的理论给出录取排名。</p><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出 3 个正整数，分别为：<em>N</em>（≤105），即考生总数；<em>L</em>（≥60），为录取最低分数线，即德分和才分均不低于 <em>L</em> 的考生才有资格被考虑录取；<em>H</em>（&lt;100），为优先录取线——德分和才分均不低于此线的被定义为“才德全尽”，此类考生按德才总分从高到低排序；才分不到但德分到线的一类考生属于“德胜才”，也按总分排序，但排在第一类考生之后；德才分均低于 <em>H</em>，但是德分不低于才分的考生属于“才德兼亡”但尚有“德胜才”者，按总分排序，但排在第二类考生之后；其他达到最低线 <em>L</em> 的考生也按总分排序，但排在第三类考生之后。</p><p>随后 <em>N</em> 行，每行给出一位考生的信息，包括：<code>准考证号 德分 才分</code>，其中<code>准考证号</code>为 8 位整数，德才分为区间 [0, 100] 内的整数。数字间以空格分隔。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出第一行首先给出达到最低分数线的考生人数 <em>M</em>，随后 <em>M</em> 行，每行按照输入格式输出一位考生的信息，考生按输入中说明的规则从高到低排序。当某类考生中有多人总分相同时，按其德分降序排列；若德分也并列，则按准考证号的升序输出。</p><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">14 60 80</span><br><span class="line">10000001 64 90</span><br><span class="line">10000002 90 60</span><br><span class="line">10000011 85 80</span><br><span class="line">10000003 85 80</span><br><span class="line">10000004 80 85</span><br><span class="line">10000005 82 77</span><br><span class="line">10000006 83 76</span><br><span class="line">10000007 90 78</span><br><span class="line">10000008 75 79</span><br><span class="line">10000009 59 90</span><br><span class="line">10000010 88 45</span><br><span class="line">10000012 80 100</span><br><span class="line">10000013 90 99</span><br><span class="line">10000014 66 60</span><br></pre></td></tr></table></figure><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">12</span><br><span class="line">10000013 90 99</span><br><span class="line">10000012 80 100</span><br><span class="line">10000003 85 80</span><br><span class="line">10000011 85 80</span><br><span class="line">10000004 80 85</span><br><span class="line">10000007 90 78</span><br><span class="line">10000006 83 76</span><br><span class="line">10000005 82 77</span><br><span class="line">10000002 90 60</span><br><span class="line">10000014 66 60</span><br><span class="line">10000008 75 79</span><br><span class="line">10000001 64 90</span><br></pre></td></tr></table></figure><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>把学号、德分、才分、德才总分和类别都存到结构体中，然后排序。<br>类别从小到大，总分从大到小，德分从大到小，学号从小到大。</p><h3 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">int</span> no;</span><br><span class="line"><span class="keyword">int</span> de;</span><br><span class="line"><span class="keyword">int</span> cai;</span><br><span class="line"><span class="keyword">int</span> sum;</span><br><span class="line"><span class="keyword">int</span> clas;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(student s1, student s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (s1.clas != s2.clas)</span><br><span class="line"><span class="keyword">return</span> s1.clas &lt; s2.clas;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (s1.sum != s2.sum)</span><br><span class="line"><span class="keyword">return</span> s1.sum &gt; s2.sum;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (s1.de != s2.de)</span><br><span class="line"><span class="keyword">return</span> s1.de &gt; s2.de;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">return</span> s1.no &lt; s2.no;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n, l, h;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n &gt;&gt; l &gt;&gt; h;</span><br><span class="line">student *stu = <span class="keyword">new</span> student[n];</span><br><span class="line"><span class="keyword">int</span> count = n;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; stu[i].no &gt;&gt; stu[i].de &gt;&gt; stu[i].cai;</span><br><span class="line">stu[i].sum = stu[i].de + stu[i].cai;</span><br><span class="line"><span class="keyword">if</span> (stu[i].de &lt; l || stu[i].cai &lt; l)</span><br><span class="line">&#123;</span><br><span class="line">stu[i].clas = <span class="number">5</span>;</span><br><span class="line">count--;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (stu[i].de &gt;= h &amp;&amp; stu[i].cai &gt;= h)</span><br><span class="line">stu[i].clas = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (stu[i].cai &lt; h &amp;&amp; stu[i].de &gt;= h)</span><br><span class="line">stu[i].clas = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (stu[i].de &gt;= stu[i].cai)</span><br><span class="line">stu[i].clas = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">stu[i].clas = <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line">sort(stu, stu + n, cmp);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; count &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d %d %d&quot;</span>, stu[i].no, stu[i].de, stu[i].cai);</span><br><span class="line"><span class="keyword">if</span> (i != count - <span class="number">1</span>)</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”&lt;/p&gt;
+&lt;p&gt;现给出一批考生的德才分数，请根据司马光的理论给出录取排名。&lt;/p&gt;</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="https://blog.ccuwxy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="PAT" scheme="https://blog.ccuwxy.cn/tags/PAT/"/>
+    
+    <category term="算法" scheme="https://blog.ccuwxy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT Basic Level 1014 福尔摩斯的约会（C++实现）</title>
+    <link href="https://blog.ccuwxy.cn/e4d95360/"/>
+    <id>https://blog.ccuwxy.cn/e4d95360/</id>
+    <published>2021-09-06T02:32:05.000Z</published>
+    <updated>2021-09-06T02:49:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>大侦探福尔摩斯接到一张奇怪的字条：<code>我们约会吧！ 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;hgsfdk d&amp;Hyscvnm</code>。大侦探很快就明白了，字条上奇怪的乱码实际上就是约会的时间<code>星期四 14:04</code>，因为前面两字符串中第 1 对相同的大写英文字母（大小写有区分）是第 4 个字母 <code>D</code>，代表星期四；第 2 对相同的字符是 <code>E</code> ，那是第 5 个英文字母，代表一天里的第 14 个钟头（于是一天的 0 点到 23 点由数字 0 到 9、以及大写字母 <code>A</code> 到 <code>N</code> 表示）；后面两字符串第 1 对相同的英文字母 <code>s</code> 出现在第 4 个位置（从 0 开始计数）上，代表第 4 分钟。现给定两对字符串，请帮助福尔摩斯解码得到约会的时间。</p><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在 4 行中分别给出 4 个非空、不包含空格、且长度不超过 60 的字符串。</p><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出约会的时间，格式为 <code>DAY HH:MM</code>，其中 <code>DAY</code> 是某星期的 3 字符缩写，即 <code>MON</code> 表示星期一，<code>TUE</code> 表示星期二，<code>WED</code> 表示星期三，<code>THU</code> 表示星期四，<code>FRI</code> 表示星期五，<code>SAT</code> 表示星期六，<code>SUN</code> 表示星期日。题目输入保证每个测试存在唯一解。</p><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3485djDkxh4hhGE </span><br><span class="line">2984akDfkkkkggEdsb </span><br><span class="line">s&amp;hgsfdk </span><br><span class="line">d&amp;Hyscvnm</span><br></pre></td></tr></table></figure><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">THU 14:04</span><br></pre></td></tr></table></figure><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>第 1 对相同的大写英文字母：A-G（<code>MON</code>-<code>SUN</code>）；<br>第 2 对相同的字符：0-9、A-N；<br>后面两字符串第 1 对相同的英文字母：索引从0开始；<br>小时和分钟是一位的前面需要补0。</p><h3 id="AC-代码"><a href="#AC-代码" class="headerlink" title="AC 代码"></a>AC 代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">string</span> s1, s2, s3, s4;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; s1 &gt;&gt; s2 &gt;&gt; s3 &gt;&gt; s4;</span><br><span class="line"><span class="keyword">int</span> week = <span class="number">0</span>, hour = <span class="number">-1</span>, minus = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> temp;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s1.size() &amp;&amp; i &lt; s2.size(); i++)</span><br><span class="line">&#123;</span><br><span class="line">temp = s1.at(i);</span><br><span class="line"><span class="keyword">if</span> (temp == s2.at(i))</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (flag == <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (temp &gt; <span class="string">&#x27;G&#x27;</span> || temp &lt; <span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"><span class="keyword">continue</span>;</span><br><span class="line">week = temp - <span class="string">&#x27;A&#x27;</span> + <span class="number">1</span>;</span><br><span class="line">flag++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (temp &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; temp &lt;= <span class="string">&#x27;9&#x27;</span> || temp &gt;= <span class="string">&#x27;A&#x27;</span> &amp;&amp; temp &lt;= <span class="string">&#x27;N&#x27;</span>) &#123;</span><br><span class="line">hour = temp &gt;= <span class="string">&#x27;A&#x27;</span> ? (temp - <span class="string">&#x27;A&#x27;</span> + <span class="number">10</span>) : (temp - <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s3.size() &amp;&amp; i &lt; s4.size(); i++)</span><br><span class="line">&#123;</span><br><span class="line">temp = s3.at(i);</span><br><span class="line"><span class="keyword">if</span> (temp &lt; <span class="string">&#x27;A&#x27;</span> || (temp &gt; <span class="string">&#x27;Z&#x27;</span> &amp;&amp; temp &lt; <span class="string">&#x27;a&#x27;</span>) || temp &gt;<span class="string">&#x27;z&#x27;</span>)</span><br><span class="line"><span class="keyword">continue</span>;</span><br><span class="line"><span class="keyword">if</span> (temp == s4.at(i))</span><br><span class="line">&#123;</span><br><span class="line">minus = i;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">string</span> week_str[] = &#123; <span class="string">&quot;&quot;</span>,<span class="string">&quot;MON&quot;</span>,<span class="string">&quot;TUE&quot;</span>,<span class="string">&quot;WED&quot;</span>,<span class="string">&quot;THU&quot;</span>,<span class="string">&quot;FRI&quot;</span>,<span class="string">&quot;SAT&quot;</span>,<span class="string">&quot;SUN&quot;</span> &#125;;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; week_str[week] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%02d:%02d&quot;</span>, hour, minus);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;大侦探福尔摩斯接到一张奇怪的字条：&lt;code&gt;我们约会吧！ 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;amp;hgsfdk d&amp;amp;Hyscvnm&lt;/code&gt;。大侦探很快就明白了，字条上奇怪的乱码实际上就是约会的时间&lt;code&gt;星期四 </summary>
+      
+    
+    
+    
+    <category term="算法" scheme="https://blog.ccuwxy.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="PAT" scheme="https://blog.ccuwxy.cn/tags/PAT/"/>
+    
+    <category term="算法" scheme="https://blog.ccuwxy.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>PAT Basic Level 1012 数字分类（C++实现）</title>
@@ -495,59 +548,6 @@
     
     
     <category term="计算机网络" scheme="https://blog.ccuwxy.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JVM</title>
-    <link href="https://blog.ccuwxy.cn/66c016fb/"/>
-    <id>https://blog.ccuwxy.cn/66c016fb/</id>
-    <published>2020-04-06T13:05:00.000Z</published>
-    <updated>2021-01-14T16:53:00.349Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Java内存区域"><a href="#Java内存区域" class="headerlink" title="Java内存区域"></a>Java内存区域</h3><p>  <strong>JDK1.8之前：</strong></p><ul><li><strong>线程共享</strong>：堆、方法区</li><li><strong>线程私有</strong>：虚拟机栈、本地方法栈、程序计数器</li></ul><p>  <strong>JDK1.8：</strong></p><ul><li><strong>线程共享</strong>：堆、元空间（直接内存）</li><li><strong>线程私有</strong>：虚拟机栈、本地方法栈、程序计数器</li></ul><h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。字节码解释器工作时通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等功能都需要依赖这个计数器来完。</p><p><strong>程序计数器是唯一一个不会出现 OutOfMemoryError 的内存区域，它的生命周期随着线程的创建而创建，随着线程的结束而死亡。</strong></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Java内存区域&quot;&gt;&lt;a href=&quot;#Java内存区域&quot; class=&quot;headerlink&quot; title=&quot;Java内存区域&quot;&gt;&lt;/a&gt;Java内存区域&lt;/h3&gt;&lt;p&gt;  &lt;strong&gt;JDK1.8之前：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;str</summary>
-      
-    
-    
-    
-    <category term="Java" scheme="https://blog.ccuwxy.cn/categories/Java/"/>
-    
-    
-    <category term="JVM" scheme="https://blog.ccuwxy.cn/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>redis</title>
-    <link href="https://blog.ccuwxy.cn/7b25d017/"/>
-    <id>https://blog.ccuwxy.cn/7b25d017/</id>
-    <published>2020-04-06T11:36:00.000Z</published>
-    <updated>2021-01-14T16:53:00.356Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h3><ol><li>String</li></ol><p> <strong>常用命令:</strong>  set,get,decr,incr,mget 等。<br> 是简单的key-value类型。</p><ol start="2"><li>Hash</li></ol><p> <strong>常用命令:</strong>  hget,hset,hgetall 等。<br> 特别适合存储对象。</p><ol start="3"><li>List</li></ol><p> <strong>常用命令:</strong>   lpush,rpush,lpop,rpop,lrange等。<br> list就是链表，可用作粉丝列表、消息列表</p><ol start="4"><li>Set</li></ol><p> <strong>常用命令:</strong> sadd,spop,smembers,sunion等。<br> set 对外提供的功能与list类似是一个列表的功能，特殊之处在于 set 是可以自动排重的。</p><ol start="5"><li>Sorted Set</li></ol><p> <strong>常用命令:</strong> zadd,zrange,zrem,zcard等。<br> 和set相比，sorted set增加了一个权重参数score，使得集合中的元素能够按score进行有序排列。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;常用数据类型&quot;&gt;&lt;a href=&quot;#常用数据类型&quot; class=&quot;headerlink&quot; title=&quot;常用数据类型&quot;&gt;&lt;/a&gt;常用数据类型&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;String&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt; &lt;strong&gt;常用命令:&lt;/strong&gt;  se</summary>
-      
-    
-    
-    
-    <category term="数据库" scheme="https://blog.ccuwxy.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-    <category term="redis" scheme="https://blog.ccuwxy.cn/tags/redis/"/>
     
   </entry>
   
